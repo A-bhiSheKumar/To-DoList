@@ -1,0 +1,74 @@
+<!-- views/todos.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists of work</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="hero container" > 
+    <div class="hero__title"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <!-- code -->
+    <h1 class="heading">Your Todo List</h1>
+    <ul class="lists">
+        <% todo.forEach((todo, index) => { %>
+            <li class="<%= todo.completed ? 'completed' : '' %>">
+                <%= todo.task %>
+                <% if (!todo.completed) { %>
+                    <form action="/todo/complete/<%= index %>" method="post" class="completed">
+                        <button class="checkTask"  type="submit">Mark as Completed</button>
+                    </form>
+                <% } %>
+
+            <!-- Add the delete button here -->
+            <form action="/todo/delete/<%= index %>" method="post" class="deleteTask">
+                <button class="deleteButton" type="submit">Delete</button>
+            </form>
+            </li>
+        <% }); %>
+    </ul>
+
+    <button class="back-home">
+        <a href="/">Back to Home</a>
+    </button>
+
+
+    <%- include('includes/footer.ejs') %>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const deleteForms = document.querySelectorAll(".deleteTask");
+
+        deleteForms.forEach((form) => {
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault(); // Prevent default form submission
+
+                const confirmed = confirm("Are you sure you want to delete this task?");
+                if (confirmed) {
+                    const response = await fetch(form.action, {
+                        method: "POST",
+                    });
+
+                    if (response.ok) {
+                        // Reload the page to reflect the updated list
+                        window.location.reload();
+                    } else {
+                        console.error("Error deleting task.");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

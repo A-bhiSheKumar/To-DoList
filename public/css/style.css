@@ -1,0 +1,264 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure minimum height of viewport */
+}
+
+.content {
+    flex: 1; /* Expand to fill available space */
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+.hero {
+  background-color: #0040C1;
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero__title {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #003298;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+          animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #0051f4;
+}
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+.liveDay{
+    margin-left: 510px;
+    margin-top: 80px;
+    height:40px;
+    width: 260px;
+    background-color: rgb(184, 76, 184);
+    text-align: center;
+    color:white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+
+input{
+    display: flex;
+    margin-left: 470px;
+    margin-top: 20px;
+    height: 40px;
+    width: 340px;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.add-button{
+    margin-left: 520px;
+    margin-top: 18px;
+    height: 30px;
+    background-color: yellowgreen;
+    width: 90px;
+    font-size: medium;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.add-button:hover {
+    transform: scale(1.1);
+}
+.check-button{
+    margin-top: 18px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+    height: 30px;
+    background-color: yellow;
+    width: 90px;
+   font-size: medium;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    transition: transform 0.3s ease;
+}
+.check-button a{
+    text-decoration: none;
+    color: inherit;
+}
+.check-button:hover {
+    transform: scale(1.1);
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+/* Styling  Todo view page */
+
+.heading{
+    margin-left: 510px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    height:40px;
+    width: 260px;
+    background-color: rgb(238, 233, 238);
+    text-align: center;
+    color:black;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding-top: 5px;
+
+}
+.lists{
+    width: 500px;
+    height: fit-content;
+    margin-left: 360px;
+}
+.lists li{
+    background-color: whitesmoke;
+    border: none;
+    font-weight: 800;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 25px;
+    padding-top: 8px;
+    padding-left: 8px;
+    display: flex;
+    text-transform: uppercase;  
+    color: darkorchid;
+}
+.checkTask{
+    width: fit-content;
+    border-radius: 2px;
+    margin-left: 100px;
+    border: none;
+    background-color: yellowgreen;
+    transition: transform 0.3s ease;
+}
+.checkTask:hover{
+    transform: scale(1.1);
+}
+
+.deleteButton{
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+}
+.deleteButton:hover{
+    transform: scale(1.1);
+}
+
+
+.back-home{
+    background-color:yellow;
+    height: 40px;
+    width: 150px;
+    margin-left: 560px;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+.back-home:hover{
+    transform: scale(1.1);
+}
+
+.back-home a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 400px;
+    background-color:whitesmoke;
+    color: #333;
+    font-size: 14px;
+}

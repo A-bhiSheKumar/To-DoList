@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        @keyframes glowing {
+            0%, 100% {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            }
+            50% {
+                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+            }
+        }
+
+        .glowing-text {
+            font-size: 40px;
+            color: #00ff00;
+            animation: glowing 2s infinite;
+            margin-left: 540px;
+        }
+    </style>
+</head>
+<body>
+<div class="hero container"> 
+    <h1 class="glowing-text">To-DoList</h1>
+    <div class="hero__title"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <p class="liveDay"><%= getCurrentDay() %>, <%= getCurrentMonth() %> <%= getCurrentDate() %></p>
+    <form action="/todo/add" method="post" >
+        <input type="text" name="task" placeholder="Please Enter you Task" required>
+        <button class="add-button" type="submit">Add Task</button>
+        <button class="check-button">
+            <a href="/todo">View Task</a>
+        </button>
+    </form>
+
+
+    <!-- including footer -->
+    <%- include('includes/footer.ejs') %>
+</div>
+
+</body>
+</html>

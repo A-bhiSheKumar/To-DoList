@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+</head>
+<body>
+
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> To-Dolist</p>
+    </footer>
+
+    
+    <script>
+         const currentYear = new Date().getFullYear();
+        const currentYearElement = document.getElementById("currentYear");
+        currentYearElement.textContent = currentYear;
+    </script>
+</body>
+</html>
