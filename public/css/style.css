@@ -262,3 +262,65 @@ input{
     color: #333;
     font-size: 14px;
 }
+
+
+/* Responsive styling for phone screens */
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 24px;
+  }
+
+  .liveDay,
+  input,
+  .add-button,
+  .check-button {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .check-button{
+    margin-left: 18px;
+  }
+  .hero {
+    padding: 20px;
+  }
+
+  /* Centering text and buttons */
+
+  .liveDay{
+    margin-top: 30px;
+    padding-top: 0px;
+    margin-bottom: 60px;
+  }
+  .hero__title,
+  .heading,
+  input,
+  .add-button,
+
+  .back-home {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .lists,
+  .lists li{
+    width: 200px;
+    margin-left: 5px;
+  }
+
+  .deleteButton{
+    margin-left: 8px;
+    margin-right: 15px;
+    margin-top: 35px;
+  }
+
+  .lists li{
+    margin-bottom: 55px;
+  }
+ 
+  .checkTask{
+    margin-top: 35px;
+    margin-left:0px;
+  }
+  
+}
