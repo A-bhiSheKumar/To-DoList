@@ -2,9 +2,9 @@
   "name": "todolist",
   "version": "1.0.0",
   "description": "making of todoList",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "app.js",
+  "scripts":{
+    "start":"node app.js"
   },
   "author": "me",
   "license": "ISC",
